@@ -8,6 +8,7 @@ description: "Predict the diagnosis of this case presentation of a patient.\n"
 doc_to_text: "Case presentation:\n{{clean_case_presentation}}\nDiagnosis:"
 doc_to_target: correct_diagnosis
 doc_to_choice: "{{[distractor1, distractor2, distractor3, correct_diagnosis]}}"
+
 metric_list:
   - metric: acc_norm
     aggregation: mean
