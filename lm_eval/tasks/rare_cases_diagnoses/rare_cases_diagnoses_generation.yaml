@@ -4,14 +4,15 @@ task: rare_cases_diagnoses_generation
 validation_split: null
 output_type: generate_until
 generation_kwargs:
-#  until:
-#    - "<|eot_id|>"
-#    - "."
+  until:
+    - "<|eot_id|>"
+    - "."
   do_sample: false
   temperature: 0.0
 
 test_split: test
-description: "Predict the diagnosis of this case presentation of a patient. Answer only the name of the diagnosis.\n"
+#description: "Predict the diagnosis of this case presentation of a patient. For example:<diagnosis name here>\n"
+description: "Predict the diagnosis of this case presentation of a patient. Return the final diagnosis in one concise sentence without any further elaboration.\nFor example:<diagnosis name here>\n"
 doc_to_text: "Case presentation:\n{{clean_case_presentation}}\nDiagnosis:"
 doc_to_target: correct_diagnosis
 #process_results: !function utils.process_results
